@@ -1,0 +1,24 @@
+{
+  "name": "mediatek",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "A simple Mediatek",
+  "scripts": {
+    "test": "ava"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ava": "^2.4.0",
+    "serve": "^11.2.0"
+  },
+
+  "dependencies": {
+    "esm": "^3.2.25"
+  },
+  "ava": {
+    "require": [
+        "esm"
+    ]
+  }
+}

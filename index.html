@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>MyMediatek</title>
+          <!-- Bootstrap core CSS -->
+        <link href="src/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="src/css/heroic-features.css" rel="stylesheet">
+        
+      </head>
+    <body>
+             <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">MyMediatek</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item desactive">
+                <a class="nav-link" id="all">All
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="fAlbum">Musique </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"  id="fMovie">Films</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="fGame">Jeux</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+     <!-- Page Content -->
+      <div class="container">
+        <!-- Jumbotron Header -->
+    <header class="jumbotron my-4">
+      
+      <h1 class="display-3">Bienvenu sur votre médiathèque !</h1>
+      <p class="lead">Ici vous pouvez gérer votre médiathèque de films, jeux, musique ! </p>
+      <button class="btn btn-primary btn-lg" id="btAdd" data-toggle="modal" data-target="#modalAdd">Ajouter un media</button>
+    </header>
+        <main>
+       
+    
+ 
+        <!-- Page Features -->
+        <div class="row text-center" id="content">
+  
+        </div>
+        <!-- /.row -->
+    
+      </div>
+      <!-- /.container -->     
+            
+            
+        </main>
+
+        <!-- include src files here... -->
+        <script  src="src/main.js" type='module'></script>
+        <script src="src/css/vendor/jquery/jquery.min.js"></script>
+        <script src="src/css/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      
+        <!--Modal creation media -->
+        <div class="modal fade" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog cascading-modal" role="document">
+            <!--Content-->
+            <div class="modal-content">
+
+              <!--Modal cascading tabs-->
+              <div class="modal-c-tabs">
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#musique" role="tab"><i
+                        class="fas fa-user mr-1"></i>
+                      Album</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#jeux" role="tab"><i class="fas fa-user-plus mr-1"></i>
+                      Game</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#films" role="tab"><i class="fas fa-user-plus mr-1"></i>
+                      Movie</a>
+                  </li>
+                </ul>
+
+                <!-- Tab panels -->
+                <div class="tab-content">
+                  <!--Panel Musique-->
+                  <div class="tab-pane fade in show active" id="musique" role="tabpanel">
+
+                    <!--Body-->
+                    <div class="modal-body">
+
+                      <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                          <label class="col-sm-1 control-label" for="aTitre" >Titre</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="aTitre" placeholder="Titre" required/>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-6 control-label" for="aRelease">Date de sortie</label>
+                          <div class="col-sm-10">
+                            <input type="number" class="form-control" id="aRelease" placeholder="Date de sortie" required/>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label" for="aRate">Note</label>
+                          <div class="col-sm-10">
+                            <select class="form-control" id="aRate">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-6 control-label" for="aImg">Choisir son image (url)</label>
+                          <div class="col-sm-10">
+                            <input type="url" class="form-control" id="aImg" placeholder="IMAGE" required/>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label" for="aArtiste">Artiste</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="aArtiste" placeholder="Artiste" required/>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-6 control-label" for="aTracks">Nombre de pistes</label>
+                          <div class="col-sm-10">
+                            <input type="number" class="form-control" id="aTracks" placeholder="Nombre de pistes" required/>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-primary btn-lg" id="submit_album">Ajouter
+                              l'album</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+
+                  <!--/.Panel Musique-->
+
+                  <!--Panel Game-->
+                  <div class="tab-pane fade" id="jeux" role="tabpanel">
+                    <!--Body-->
+                    <div class="modal-body">
+
+                      <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                          <label class="col-sm-1 control-label" for="gTitre">Titre</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="gTitre" placeholder="Titre" required/>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-6 control-label" for="gRelease">Date de sortie</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="gRelease" placeholder="Date de sortie" required/>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label" for="gRate">Note</label>
+                          <div class="col-sm-10">
+                            <select class="form-control" id="gRate">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-6 control-label" for="gImg">Choisir son image (url)</label>
+                          <div class="col-sm-10">
+                            <input type="url" class="form-control" id="gImg" placeholder="IMAGE" required/>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-6 control-label" for="gStudio">Studio</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="gStudio" placeholder="Studio" required/>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-8 control-label" for="gNbPlayers">Nombre de joueurs</label>
+                          <div class="col-sm-10">
+                            <input type="number" class="form-control" id="gNbPlayers" placeholder="Nombre de joueurs" required/>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-6 control-label" for="gPlot">Plot</label>
+                          <div class="col-sm-10">
+                            <textarea class="form-control" rows="5" id="gPlot" required></textarea>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-primary btn-lg" id="submit_game">Ajouter le
+                              jeux</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <!--/.Panel Game-->
+                  <!--Panel Film-->
+                  <div class="tab-pane fade" id="films" role="tabpanel">
+                    <!--Body-->
+                    <div class="modal-body">
+
+                      <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                          <label class="col-sm-1 control-label" for="mTitre">Titre</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="mTitre" placeholder="Titre" required/>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-6 control-label" for="mRelease">Date de sortie</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="mRelease" placeholder="Date de sortie" required/>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label" for="mRate">Note</label>
+                          <div class="col-sm-10">
+                            <select class="form-control" id="mRate">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-6 control-label" for="mImg">Choisir son image (url)</label>
+                          <div class="col-sm-10">
+                            <input type="url" class="form-control" id="mImg" placeholder="IMAGE" required/>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-6 control-label" for="mDirector">Director</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="mDirector" placeholder="Director" required/>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-6 control-label" for="mActeurs">Acteurs</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="mActeurs" placeholder="Acteurs" required/>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label" for="mDuration">Durée</label>
+                          <div class="col-sm-10">
+                            <input type="number" class="form-control" id="mDuration" placeholder="Durée" required/>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-6 control-label" for="mPlot">Plot</label>
+                          <div class="col-sm-10">
+                            <textarea class="form-control" rows="5" id="mPlot" required></textarea>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-primary btn-lg" id="submit_movie">Ajouter le
+                              film</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <!--/.Panel Film-->
+                </div>
+
+              </div>
+            </div>
+            <!--/.Content-->
+          </div>
+        </div>
+    </body>
+
+</html>
